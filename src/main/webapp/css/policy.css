@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.bud{
+	margin-top:200px;	
+	margin-left:100px;
+	margin-right:100px;
+	
+}
+p{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+	color:#FAB4BF;
+	text-align:center;
+}

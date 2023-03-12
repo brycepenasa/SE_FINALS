@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+body{
+	position:relative;
+	margin-top:100px;
+	text-align:center;
+	font-family: 'Play', sans-serif;
+}
+
+.contain{
+	position:relative;
+	padding:250px;
+}
+
+.obtn{
+	background-color:#FAB4BF;
+	color:#FFF;
+	padding:10px;
+	border-radius:20px;
+	font-size:15px;
+	margin:none;
+	border:none;
+	outline:none;
+	cursor: pointer;
+}
+
+@media (max-width:720px){
+body .contain{
+	text-align:center;
+	margin:auto;
+	padding: 100px 0;
+}
+
+	}
