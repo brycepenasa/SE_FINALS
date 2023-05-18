@@ -1,185 +1,167 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+
+<%
+String id = request.getParameter("userId");
+String driverName = "com.mysql.cj.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String dbName = "sefinals";
+String userId = "root";
+String password = "admin";
+
+try {
+	Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+	e.printStackTrace();
+}
+
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
 <!DOCTYPE html>
+
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- NAV BAR -->
 <link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/bootstrap2.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
 <!--FOOTER-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+<link
+	href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap"
+	rel="stylesheet">
 <link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 <!--GOOGLE FONTS-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+<link
+	href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap"
+	rel="stylesheet">
 <link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/slider.css">
 </head>
-<title>Welcome ${uname}</title>
-<link rel="website icon" type="jpg"
-href="images/logo.jpg">
+<title>HOME</title>
+<link rel="website icon" type="jpg" href="images/logo.jpg">
 <header>
-	<img class="logo" src="images/logo.jpg">
-
-<input type="checkbox" id="menu-bar">
-	<label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-<nav class="navbar">
-	<ul>
-		<li><a href="home2.jsp">HOME</a></li>
-		<li><a href="loungewear2.jsp">LOUNGEWEAR</a></li>
-		<li><a href="orders2.jsp">ORDERS</a></li>
-		<li><a href="cart2.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
-		<li><a href="./Logout"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-	</ul>
-</nav>
+	<img class="logo" src="images/logopaynal.png"> <input type="checkbox"
+		id="menu-bar"> <label for="menu-bar"><i
+		class="fa-solid fa-bars"></i></label>
+	<nav class="navbar">
+		<ul>
+			<li style="background:#FAB4BF;"><a href="home2.jsp">HOME</a></li>
+			<li><a href="loungewear2.jsp">PRODUCTS</a></li>
+			<li><a href="orders2.jsp">ORDERS</a></li>
+			<li><a href="cart2.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li><a href="./Logout"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+		</ul>
+	</nav>
 
 </header>
 
-<body>
+<body style="overflow-x: hidden;">
 <input type ="hidden" id="status" value="<%= request.getAttribute("status")%>">
-  
-  <div class="py-5">
-    <div class="container" style=" margin-top: 100px; size: 50%;padding: 50px; border-style: solid; width:800px;]">
-      <div class="row">
-        <div class="col-md-12" style="">
-          <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"> </li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"> </li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"> </li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active"> <img class="d-block img-fluid w-100" src="images/4.jpg">
-                <div class="carousel-caption">
+	<br><br><br><br><br>
+	<div>
+<div style="width: 100%; height:100%;"class="carousel slide" data-pause="false" data-ride="carousel" id="carousel">
+            <div class="carousel-inner ">
+              <div class="carousel-item active"> <img class="d-block img-fluid w-100" style="height: 835px;"src="images/banner.jpg" >
+                <div class="carousel-caption">          
                 </div>
               </div>
-              <div class="carousel-item "> <img class="d-block img-fluid w-100" src="images/5.jpg">
-                <div class="carousel-caption">
+              <div class="carousel-item"> <a href="loungewear2.jsp"><img class="d-block img-fluid w-100" style="height: 835px;" src="images/ban.png"></a>
+                <div class="carousel-caption">                 
                 </div>
               </div>
-              <div class="carousel-item"> <img class="d-block img-fluid w-100" src="images/6.jpg">
-                <div class="carousel-caption">
+              <div class="carousel-item"> <img class="d-block img-fluid w-100"style="height: 835px;" src="images/bann.png">
+                <div class="carousel-caption">                  
                 </div>
               </div>
-            </div>
+            </div> <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel" role="button" data-slide="next"> <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span> </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="display-3">Featured Items</h1> 
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-4 bg-light" style="">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 p-3" >
-          <div class="card box-shadow">
-            <img class="card-img-top" src="images/1.jpg">
-            <div class="card-body">
-              <p class="card-text">Clothing</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="#" class="btn btn-sm btn-outline-secondary">Buy Now<br></a><a href="#" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px;">Add to Cart</a>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="images/2.jpg">
-            <div class="card-body">
-              <p class="card-text">Clothing</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="productpage.jsp" class="btn btn-sm btn-outline-secondary">Buy Now<br></a><a href="#" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px;">Add to Cart</a>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="images/3.jpg">
-            <div class="card-body">
-              <p class="card-text">Clothing</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="#" class="btn btn-sm btn-outline-secondary">Buy Now<br></a><a href="#" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px;">Add to Cart</a>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-4 bg-light" style="">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="images/7.jpg">
-            <div class="card-body">
-              <p class="card-text">Clothing</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="#" class="btn btn-sm btn-outline-secondary">Buy Now<br></a><a href="#" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px;">Add to Cart</a>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="images/8.jpg">
-            <div class="card-body">
-              <p class="card-text">Clothing</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                 <a href="#" class="btn btn-sm btn-outline-secondary">Buy Now<br></a><a href="#" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px;">Add to Cart</a>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="images/9.jpg">
-            <div class="card-body">
-              <p class="card-text">Clothing</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="#" class="btn btn-sm btn-outline-secondary">Buy Now<br></a><a href="#" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px;">Add to Cart</a>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous" style=""></script>
-<form action = "Logout">
-<input type="submit" value="logout">
-</form>
- <script src="vendor/jquery/jquery.min.js"></script>
+				<div class="col-md-12" >
+		<br><br><br><br>
+		
+<h1 style="text-align: center">Featured Items</h1>
+
+				
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="slider" style="display: flex; justify-content: center; margin-top:20px;">
+	<div class="slide-track">
+		<div class="slide" style="margin-right: 5px;">
+			<a href="productpage.jsp?id=1"><img src="images/1.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=2"><img src="images/2.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=3"><img src="images/3.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=4"><img src="images/4.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=5"><img src="images/5.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=6"><img src="images/6.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=7"><img src="images/7.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide" style="margin-right: 5px;">
+			<a href="productpage.jsp?id=1"><img src="images/1.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=2"><img src="images/2.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=3"><img src="images/3.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=4"><img src="images/4.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=5"><img src="images/5.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=6"><img src="images/6.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		<div class="slide"style="margin-right: 5px;">
+			<a href="productpage.jsp?id=7"><img src="images/7.jpg" height="400" width="400" alt="" /></a>
+		</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous" style=""></script>
+		
+		<script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" href="alert/dist/sweetalert.css">
@@ -192,36 +174,53 @@ href="images/logo.jpg">
     }
  
     </script>
+    <br><br><br><br>
+	<div class="container">
+      <div style="background: #f4aeb8;"class="row p-4" >
+        <div class="p-4 col-md-6 bg-light">
+        <br>
+          <h1 style="text-align:center;"class="m-0">About Us</h1>
+          
+          <p style="font-size: 18px; text-align: justify;"class="my-4">Welcome to SOUNDSDREAMY, a small business founded by Mrs. Patricia Gozun in 2020. Our mission is to provide sleepwear and loungewear to our customers with the highest quality standards and excellent customer service. We take pride in being a small, locally-owned business and strive to make a positive impact on the community. At Soundsdreamy, we believe in building lasting relationships with our customers by going above and beyond to meet their needs. Our team is dedicated to ensuring that every customer has a positive experience with us. We are passionate about providing comfy clothes and are committed to continuous improvement to provide the best possible products for our customers. Thank you for choosing Soundsdreamy, and we look forward to serving you!</p>
+        </div>
+        <div class="p-0 col-md-6">
+          <img class="img-fluid d-block" src="images/logo.jpg"> </div>
+      </div>
+    </div>	
 </body>
-
+<br><br><br><br>
 <footer>
-<div class="footer">
-<div class="row">
-  <div class="col">
-    
-<a href="https://www.facebook.com/soundsdreamy"><i class="fa-brands fa-facebook"></i></a>
-<a href="https://www.instagram.com/soundsdreamy/"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@soundsdreamy"><i class="fa-brands fa-tiktok"></i></a>
-<a href = "https://mail.google.com/mail/?view=cm&fs=1&to=soundsdreamy@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-</div>
-</div>
+	<div class="footer">
+		<div class="row">
+			<div class="col">
 
-<div class="row">
-   <div class="col">
-<ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
-<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
-<li><a href="faqs.jsp">FAQS</a></li>
-</ul>
-</div>
-</div>
+				<a href="https://www.facebook.com/soundsdreamy"><i
+					class="fa-brands fa-facebook"></i></a> <a
+					href="https://www.instagram.com/soundsdreamy/"><i
+					class="fa-brands fa-instagram"></i></a> <a
+					href="https://www.tiktok.com/@soundsdreamy"><i
+					class="fa-brands fa-tiktok"></i></a> <a
+					href="https://mail.google.com/mail/?view=cm&fs=1&to=soundsdreamy@gmail.com"><i
+					class="fa-solid fa-envelope"></i></a>
+			</div>
+		</div>
 
-<div class="row">
-   <div class="col">
-SoundsDreamy &copy; 2023. ALL RIGHTS RESERVED || SHOP NOW!!
-</div>
-</div>
-</div>
+		<div class="row">
+			<div class="col">
+				<ul>
+					<li><a href="termsofservice2.jsp">TERMS AND CONDITION</a></li>
+					<li><a href="privacypolicy2.jsp">PRIVACY POLICY</a></li>
+					<li><a href="faqs2.jsp">FAQS</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">SoundsDreamy &copy; 2023. ALL RIGHTS RESERVED
+				|| SHOP NOW!!</div>
+		</div>
+	</div>
 </footer>
 </html>
+
+

@@ -25,38 +25,62 @@ href="images/logo.jpg">
 </head>
 
 <header>
-	<img class="logo" src="images/logo.jpg">
-
-<input type="checkbox" id="menu-bar">
-	<label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-<nav class="navbar">
-	<ul>
-		<li><a href="home.jsp">HOME</a></li>
-		<li><a href="loungewear.jsp">LOUNGEWEAR</a></li>
-		<li><a href="orders.jsp">ORDERS</a></li>
-		<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
-		<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
-	</ul>
-</nav>
+	<img class="logo" src="images/logopaynal.png"> <input type="checkbox"
+		id="menu-bar"> <label for="menu-bar"><i
+		class="fa-solid fa-bars"></i></label>
+	<nav class="navbar">
+		<ul>
+			<li><a href="home.jsp">HOME</a></li>
+			<li><a href="loungewear.jsp">PRODUCTS</a></li>
+			<li><a href="orders.jsp">ORDERS</a></li>
+			<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li style="background:#FAB4BF;"><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
+		</ul>
+	</nav>
 
 </header>
 <body>
 
 
    <input type ="hidden" id="status" value="<%= request.getAttribute("status")%>">
-   
+   <div class="contain" style="background: url(images/logina.jpg);
+  background-repeat: no-repeat;
+  background-size: 2500px;">
 <!--Register to mga idol -->
 <div class="login-body">
 
-
- <div class="sign-in-form">
+<br><br><br><br><br>
+ <div class="sign-in-form"  style="box-shadow: 10px 10px 20px #FAB4BF;">
  <i class="fa-solid fa-user fa-3x"></i>
  <h1> Sign-Up</h1>
  
  <form method="post" action="register" name="reg-form">
  
-   <input type="text" class="input-box" placeholder="Name" id="name" name="name" required PATTERN="^[a-zA-Z-]{0,10}$" title="Input characters only | Input a maximum of 10 characters">
+   <input type="text" class="input-box" placeholder="First Name" id="fname" name="fname" required PATTERN="^[a-zA-Z -]{0,20}$" title="Input characters only | Input a maximum of 10 characters">
+    <input type="text" class="input-box" placeholder="Last Name" id="lname" name="lname" required PATTERN="^[a-zA-Z -]{0,20}$" title="Input characters only | Input a maximum of 10 characters">
     <input type="date" class="input-box" placeholder="Birthdate" id="birthdate" name="birthdate" required>
+ <script>
+  const dobInput = document.getElementById('birthdate');
+
+  dobInput.addEventListener('change', (event) => {
+    const selectedDate = event.target.value.split('/').reverse().join('-');
+    const today = new Date();
+    const birthDate = new Date(selectedDate);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    if (age < 15) {
+      event.target.setCustomValidity('You must be at least 15 years old to register.');
+    } else if (age > 90) {
+      event.target.setCustomValidity('You must be 90 years old or younger to register.');
+    } else {
+      event.target.setCustomValidity('');
+    }
+  });
+</script>
+
     <label>
     Gender:
     </label>
@@ -65,7 +89,7 @@ href="images/logo.jpg">
 <input type="radio" name="gender" value="Female" required> Female
 		
     <input type="email" class="input-box" placeholder="Email" id="email" name="email" required>
-    <input type="text" class="input-box" placeholder="Username" id="uname" name="uname" PATTERN="^[a-z0-9A-Z_-]{0,10}$" required title="Symbols aren't allowed | Input a maximum of 10 characters or numbers only">
+    <input type="text" class="input-box" placeholder="Username" id="uname" name="uname" PATTERN="^[a-z0-9A-Z-]{0,10}$" required title="Symbols aren't allowed | Input a maximum of 10 characters or numbers only|">
   <input type="password" class="input-box" placeholder="Password" id="pass" name="pass" required 
   title="Enter atleast 8 characters | Include atleast one (1) upper case letter | Include atleast one (1) number | Include atleast one (1) special character" 
   pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@$#?!%^&*-]).{8,}$">
@@ -82,11 +106,12 @@ cursor: pointer;"></i>
 <br><br>
       <input type="text" class="input-box" placeholder="Answer" id="secA" name="secA" required>
   <p> <span>  <input type="checkbox" required> </span> Agree to the <a href="termsofservice.jsp">terms and condition</a></p>
-  <input type= "submit" class="sbtn" value="Register" />
+  <input type= "submit" class="sbtn" value="Register" onclick="return confirm('Are the information correct? Click \'Okay\' to proceed or \'Cancel\' to cancel register.')"/>
   <hr>
   <p> Already have an account? <a href="login.jsp"> Log in </a> </p>
   
  </form>
+ </div>
  </div>
  </div>
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -101,7 +126,7 @@ cursor: pointer;"></i>
     	swal("Account didn't registered", "try again");
     }
     else if (status == "regisFailedUname"){
-    	swal("Username Already Exist", "try including numbers");
+    	swal("Username or Email Already Exist", "try using different username or email", "error");
     }
  
     </script>
@@ -120,7 +145,7 @@ cursor: pointer;"></i>
   </script>
 <!-- Sign up Ends Here -->
 </body>
-<br><br>
+
 <footer>
 <div class="footer">
 <div class="row">
@@ -132,11 +157,10 @@ cursor: pointer;"></i>
 
 <div class="row">
 <ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
-<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
-<li><a href="faqs.jsp">FAQS</a></li>
-</ul>
+					<li><a href="termsofservice.jsp">TERMS AND CONDITION</a></li>
+					<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
+					<li><a href="faqs.jsp">FAQS</a></li>
+				</ul>
 </div>
 
 <div class="row">

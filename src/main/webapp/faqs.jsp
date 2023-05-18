@@ -17,35 +17,35 @@ href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="css/footer.css">
+<link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' 
+rel='stylesheet' type='text/css'>
 </head>
 <header>
-	<img class="logo" src="images/logo.jpg">
-
-<input type="checkbox" id="menu-bar">
-	<label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-<nav class="navbar">
-	<ul>
-		<li><a href="home.jsp">HOME</a></li>
-		<li><a href="loungewear.jsp">LOUNGEWEAR</a></li>
-		<li><a href="orders.jsp">ORDERS</a></li>
-		<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
-		<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
-	</ul>
-</nav>
+	<img class="logo" src="images/logopaynal.png"> <input type="checkbox"
+		id="menu-bar"> <label for="menu-bar"><i
+		class="fa-solid fa-bars"></i></label>
+	<nav class="navbar">
+		<ul>
+			<li><a href="home.jsp">HOME</a></li>
+			<li><a href="loungewear.jsp">PRODUCTS</a></li>
+			<li><a href="orders.jsp">ORDERS</a></li>
+			<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
+		</ul>
+	</nav>
 
 </header>
 <body>
 <div class="bud">
 <h1> FREQUENTLY ASKED QUESTIONS</h1>
+<br>
 <h2>FAQS</h2>
-<h2>Where can I personally message SoundsDreamy?</h2>
-<p>You can message us on our social links located in the footer or email us at soundsdreamyph@gmail.com</p>
 <br>
 <h2>Can I return my items?</h2>
-<p>Yes you can return your items. Refer to our <a href="refund.jsp">REFUND POLICY</a></p>
+<p>You can return damaged items. You can contact us at <a href = "https://mail.google.com/mail/?view=cm&fs=1&to=soundsdreamy@gmail.com">soundsdreamy10@gmail.com</a></a></p>
 <br>
 <h2>Can I cancel my order?</h2>
-<p>You can cancel your order in the orders tab</p>
+<p>You can cancel your order in the orders tab if the status of your order is still pending</p>
 <br>
 <h2>What methods of payments do you take?</h2>
 <p>You can pay via GCASH or cash on delivery</p>
@@ -54,10 +54,14 @@ href="images/logo.jpg">
 <p>It will depend on your location. If you are around Manila, it will take 2-3 days. While for those outside Manila, it will take 4-7 days </p>
 <br>
 <h2>How will I know the sizes of clothes?</h2>
-<p>Each item have a size chart on the product description</p>
+<p>Each item have a size description on the product description</p>
 <br>
 <h2>How will I keep track on the status of my order?</h2>
-<p>In the orders tab, you will see if the item you ordered is pending or delivered.</p>
+<p>In the orders tab, you will see if the item you ordered is pending processing, or delivered.</p>
+<br>
+<h2>How long will it take me to get my order?</h2>
+<p>If an item is on hand, it usually takes 1-2 processing days and 2-4 delivery days.</p>
+<br><br><br><br><br><br>
 </div>
 </body>
 
@@ -72,11 +76,10 @@ href="images/logo.jpg">
 
 <div class="row">
 <ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
-<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
-<li><a href="faqs.jsp">FAQS</a></li>
-</ul>
+					<li><a href="termsofservice.jsp">TERMS AND CONDITION</a></li>
+					<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
+					<li><a href="faqs.jsp">FAQS</a></li>
+				</ul>
 </div>
 
 <div class="row">

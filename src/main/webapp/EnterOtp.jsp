@@ -27,34 +27,35 @@ href="images/logo.jpg">
 
 
 <header>
-	<img class="logo" src="images/logo.jpg">
-
-<input type="checkbox" id="menu-bar">
-	<label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-<nav class="navbar">
-	<ul>
-		<li><a href="home.jsp">HOME</a></li>
-		<li><a href="loungewear.jsp">LOUNGEWEAR</a></li>
-		<li><a href="orders.jsp">ORDERS</a></li>
-		<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
-		<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
-	</ul>
-</nav>
+	<img class="logo" src="images/logopaynal.png"> <input type="checkbox"
+		id="menu-bar"> <label for="menu-bar"><i
+		class="fa-solid fa-bars"></i></label>
+	<nav class="navbar">
+		<ul>
+			<li><a href="home.jsp">HOME</a></li>
+			<li><a href="loungewear.jsp">PRODUCTS</a></li>
+			<li><a href="orders.jsp">ORDERS</a></li>
+			<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li style="background:#FAB4BF;"><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
+		</ul>
+	</nav>
 
 </header>
 
 <body>
 <input type ="hidden" id="status" value="<%= request.getAttribute("status")%>">
-<div class="contain">
+<div class="contain" style="background: url(images/logina.jpg);
+  background-repeat: no-repeat;
+  background-size: 1887px;">
 <div class="login-body">
 
 
- <div class="sign-in-form">
+ <div class="sign-in-form"  style="box-shadow: 10px 10px 20px #FAB4BF;">
  <i class="fa-solid fa-user fa-3x"></i>
  <h1> Find your account</h1>
  
  <form id="register-form" action="ValidateOtp" role="form" autocomplete="off" method="post">
-  <input type="text" class="input-box" placeholder="Enter Code" id="otp" name="otp">
+  <input type="text" class="input-box" placeholder="Enter Code" id="otp" name="otp" maxlength="7" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
   <input name="recover-submit" class="sbtn" value="Reset Password" type="submit">
   <br>
   <hr>
@@ -74,7 +75,7 @@ href="images/logo.jpg">
     
     var status =document.getElementById("status").value;
    if(status == "failed"){
- 		swal("Wrong OTP", "Try Again");
+ 		swal("Wrong OTP", "Try Again", "error");
  	}
 
     </script>
@@ -92,11 +93,10 @@ href="images/logo.jpg">
 
 <div class="row">
 <ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
-<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
-<li><a href="faqs.jsp">FAQS</a></li>
-</ul>
+					<li><a href="termsofservice.jsp">TERMS AND CONDITION</a></li>
+					<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
+					<li><a href="faqs.jsp">FAQS</a></li>
+				</ul>
 </div>
 
 <div class="row">

@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
   <display-name>SE_FINALS</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>home.jsp</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>default.html</welcome-file>
@@ -88,5 +88,85 @@
   <servlet-mapping>
     <servlet-name>ValidateOtp</servlet-name>
     <url-pattern>/ValidateOtp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>feedback</display-name>
+    <servlet-name>feedback</servlet-name>
+    <servlet-class>newp.feedback</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>feedback</servlet-name>
+    <url-pattern>/feedback</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>feedbackdisplay</display-name>
+    <servlet-name>feedbackdisplay</servlet-name>
+    <servlet-class>newp.feedbackdisplay</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>feedbackdisplay</servlet-name>
+    <url-pattern>/feedbackdisplay</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>maangeFeedbackReviews</display-name>
+    <servlet-name>maangeFeedbackReviews</servlet-name>
+    <servlet-class>newp.maangeFeedbackReviews</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>maangeFeedbackReviews</servlet-name>
+    <url-pattern>/maangeFeedbackReviews</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>manageFeedbackReviews</display-name>
+    <servlet-name>manageFeedbackReviews</servlet-name>
+    <servlet-class>newp.manageFeedbackReviews</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>manageFeedbackReviews</servlet-name>
+    <url-pattern>/manageFeedbackReviews</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>feedbackReply</display-name>
+    <servlet-name>feedbackReply</servlet-name>
+    <servlet-class>newp.feedbackReply</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>feedbackReply</servlet-name>
+    <url-pattern>/feedbackReply</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>filterrating</display-name>
+    <servlet-name>filterrating</servlet-name>
+    <servlet-class>newp.filterrating</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>filterrating</servlet-name>
+    <url-pattern>/filterrating</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addNewProduct</display-name>
+    <servlet-name>addNewProduct</servlet-name>
+    <servlet-class>newp.addNewProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addNewProduct</servlet-name>
+    <url-pattern>/addNewProduct</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadServlet</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>newp.UploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
   </servlet-mapping>
 </web-app>

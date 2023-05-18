@@ -19,38 +19,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="css/footer.css">
-
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 <title>LOGIN</title>
 <link rel="website icon" type="jpg"
 href="images/logo.jpg">
 </head>
 
-
 <header>
-	<img class="logo" src="images/logo.jpg">
-
-<input type="checkbox" id="menu-bar">
-	<label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-<nav class="navbar">
-	<ul>
-		<li><a href="home.jsp">HOME</a></li>
-		<li><a href="loungewear.jsp">LOUNGEWEAR</a></li>
-		<li><a href="orders.jsp">ORDERS</a></li>
-		<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
-		<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
-	</ul>
-</nav>
+	<img class="logo" src="images/logopaynal.png"> <input type="checkbox"
+		id="menu-bar"> <label for="menu-bar"><i
+		class="fa-solid fa-bars"></i></label>
+	<nav class="navbar">
+		<ul>
+			<li><a href="home.jsp">HOME</a></li>
+			<li><a href="loungewear.jsp">PRODUCTS</a></li>
+			<li><a href="orders.jsp">ORDERS</a></li>
+			<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li style="background:#FAB4BF;"><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
+		</ul>
+	</nav>
 
 </header>
 
-<body>
+<body >
   <input type ="hidden" id="status" value="<%= request.getAttribute("status")%>">
-<div class="contain">
+<div class="contain" style="background: url(images/logina.jpg);
+  background-repeat: no-repeat;
+  background-size: 1887px;">
 <!--Login to mga idol -->
-<div class="login-body">
+<div class="login-body" >
 
 
- <div class="sign-in-form">
+ <div class="sign-in-form" style="box-shadow: 10px 10px 20px #FAB4BF;">
  <i class="fa-solid fa-user fa-3x"></i>
  <h1> Sign-In</h1>
  
@@ -61,7 +61,7 @@ href="images/logo.jpg">
   pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@$#?!%^&*-]).{8,}$">
   <i class="fa-regular fa-eye" id="togglePassword" style="margin-left: -30px; 
 cursor: pointer;"></i>
-  <p> <span>  <input type="checkbox" required> </span> Agree to the <a href="termsofservice.jsp">terms and condition</a></p>
+  
  <input type= "submit" class="sbtn" value="Login" />
   <br>
   <a href="forgot.jsp"> Forgot Password</a>
@@ -95,10 +95,9 @@ cursor: pointer;"></i>
 	<link rel="stylesheet" href="alert/dist/sweetalert.css">
 	
 	  <script type ="text/javascript">
-    
     var status =document.getElementById("status").value;
     if (status == "failed"){
-    	swal("Wrong Username or Password", "Try again");
+    	swal("Wrong Username or Password", "Try again", "error");
     }
     else if(status == "regisSuccess"){
  		swal("Account Registered", "Login Now","success");
@@ -107,10 +106,13 @@ cursor: pointer;"></i>
  		swal("Password Reset Successful", "You can login now", "success");
  	}
     else if(status == "resetFailed"){
- 		swal("Password Didn't Reset", "Try Again");
+ 		swal("Password Didn't Reset", "Try Again", "error");
  	}
     else if(status == "logoutSuccess"){
  		swal("You Logged Out", "Thank you", "success");
+ 	}
+    else if(status == "notLogged"){
+ 		swal("You are not logged in", "Login to buy", "error");
  	}
 
     </script>
@@ -126,13 +128,16 @@ cursor: pointer;"></i>
 <a href = "https://mail.google.com/mail/?view=cm&fs=1&to=soundsdreamy@gmail.com"><i class="fa-solid fa-envelope"></i></a>
 </div>
 
-<div class="row">
+<div class="row" >
 <ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
-<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
-<li><a href="faqs.jsp">FAQS</a></li>
-</ul>
+
+					<li><a href="termsofservice.jsp">TERMS & CONDITION</a></li>
+					<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
+					<li><a href="faqs.jsp">FAQS</a></li>
+				
+					
+				
+				</ul>
 </div>
 
 <div class="row">

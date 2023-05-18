@@ -55,6 +55,73 @@ ul {
   list-style: none;
 }
 
+
+
+.katawan{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	display:flex;
+	align-items:flex-start;
+	
+}
+
+.rcontainer{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	display:flex;
+	flex-direction:column;
+	
+}
+
+.rating{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	position:relative;
+	display:flex;
+	flex-direction:row-reverse;
+	
+}
+.rating input{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	position:relative;
+	height:40px;
+	width:40px;
+	display:flex;
+	
+	cursor:pointer;
+	appearance:none;
+	-webkit-appearance:none;
+}
+
+.rating input::before{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	content:'\f005';
+	position:absolute;
+	font-family:fontAwesome;
+	font-size:25px;
+	transition:1s;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before
+{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	color:var(--c);
+}
+
+
+
 a {
   text-decoration: none;
   color: #333333;
@@ -1226,7 +1293,7 @@ img {
   background-color: #FF0000;
 }
 .aa-product-catg li .aa-hot {
-  background-color: #ff6600;
+  background-color: #f4aeb8;
 }
 
 /*=== modal window ===*/
@@ -2245,7 +2312,7 @@ img {
   font-size: 16px;
 }
 #aa-product-details .aa-product-details-area .aa-product-details-bottom .aa-product-review-area .aa-review-nav li .media-body .aa-product-rating span {
-  color: #ff6600;
+  color: #f4aeb8;
 }
 #aa-product-details .aa-product-details-area .aa-product-details-bottom .aa-review-form {
   margin-top: 20px;
@@ -2265,6 +2332,7 @@ img {
   height: 45px;
   text-transform: uppercase;
   width: 100%;
+  background:#FAB4BF;
   color: #fff;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -2273,8 +2341,9 @@ img {
   transition: all 0.5s;
 }
 #aa-product-details .aa-product-details-area .aa-product-details-bottom .aa-review-form .aa-review-submit:hover {
-  background-color: #000;
-  border-color: #000;
+   color: #fff;
+ 	 background:#f4aeb8;
+
 }
 #aa-product-details .aa-product-details-area .aa-product-details-bottom .aa-review-form .form-control {
   box-shadow: none;

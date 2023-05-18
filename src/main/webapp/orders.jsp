@@ -19,19 +19,18 @@ href="images/logo.jpg">
 <link rel="stylesheet" href="css/footer.css">
 </head>
 <header>
-	<img class="logo" src="images/logo.jpg">
-
-<input type="checkbox" id="menu-bar">
-	<label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-<nav class="navbar">
-	<ul>
-		<li><a href="home.jsp">HOME</a></li>
-		<li><a href="loungewear.jsp">LOUNGEWEAR</a></li>
-		<li><a href="orders.jsp">ORDERS</a></li>
-		<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
-		<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
-	</ul>
-</nav>
+	<img class="logo" src="images/logopaynal.png"> <input type="checkbox"
+		id="menu-bar"> <label for="menu-bar"><i
+		class="fa-solid fa-bars"></i></label>
+	<nav class="navbar">
+		<ul>
+			<li><a href="home.jsp">HOME</a></li>
+			<li><a href="loungewear.jsp">PRODUCTS</a></li>
+			<li style="background:#FAB4BF;"><a href="orders.jsp">ORDERS</a></li>
+			<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
+		</ul>
+	</nav>
 
 </header>
 <body>
@@ -53,11 +52,10 @@ href="images/logo.jpg">
 
 <div class="row">
 <ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
-<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
-<li><a href="faqs.jsp">FAQS</a></li>
-</ul>
+					<li><a href="termsofservice.jsp">TERMS AND CONDITION</a></li>
+					<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
+					<li><a href="faqs.jsp">FAQS</a></li>
+				</ul>
 </div>
 
 <div class="row">

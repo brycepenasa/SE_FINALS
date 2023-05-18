@@ -27,38 +27,40 @@ href="images/logo.jpg">
 
 
 <header>
-	<img class="logo" src="images/logo.jpg">
-
-<input type="checkbox" id="menu-bar">
-	<label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-<nav class="navbar">
-	<ul>
-		<li><a href="home.jsp">HOME</a></li>
-		<li><a href="loungewear.jsp">LOUNGEWEAR</a></li>
-		<li><a href="orders.jsp">ORDERS</a></li>
-		<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
-		<li><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
-	</ul>
-</nav>
+	<img class="logo" src="images/logopaynal.png"> <input type="checkbox"
+		id="menu-bar"> <label for="menu-bar"><i
+		class="fa-solid fa-bars"></i></label>
+	<nav class="navbar">
+		<ul>
+			<li><a href="home.jsp">HOME</a></li>
+			<li><a href="loungewear.jsp">PRODUCTS</a></li>
+			<li><a href="orders.jsp">ORDERS</a></li>
+			<li><a href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li style="background:#FAB4BF;"><a href="login.jsp"><i class="fa-solid fa-user"></i></a></li>
+		</ul>
+	</nav>
 
 </header>
 
 <body>
   <input type ="hidden" id="status" value="<%= request.getAttribute("status")%>">
-<div class="contain">
+<div class="contain" style="background: url(images/logina.jpg);
+  background-repeat: no-repeat;
+  background-size: 1887px;">
 <!--Login to mga idol -->
 <div class="login-body">
 
 
- <div class="sign-in-form">
+ <div class="sign-in-form"  style="box-shadow: 10px 10px 20px #FAB4BF;">
  <i class="fa-solid fa-user fa-3x"></i>
  <h1> Hello ${uname}, reset your password?</h1>
  
  <form method="post" action="${pageContext.request.contextPath}/newPassword2" name="newp-form">
-  <input type="text" class="input-box" placeholder="Password" id="pass" name="pass" required
+   <input type="password" class="input-box" placeholder="New Password" id="pass" name="pass" required
   title="Enter atleast 8 characters | Include atleast one (1) upper case letter | Include atleast one (1) number | Include atleast one (1) special character" 
-  pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@$#?!%^&*-]).{8,}$">
-  <input type="password" class="input-box" placeholder="Password" id="confpass" name="confpass" required
+  pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@$#?!%^&*-]).{8,}$"> <i class="fa-regular fa-eye" id="togglePassword" style="margin-left: -30px; 
+cursor: pointer;"></i>
+  <input type="password" class="input-box" placeholder="Confirm Password" id="confpass" name="confpass" required
   title="Enter atleast 8 characters | Include atleast one (1) upper case letter | Include atleast one (1) number | Include atleast one (1) special character" 
   pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@$#?!%^&*-]).{8,}$">
   <i class="fa-regular fa-eye" id="togglePassword" style="margin-left: -30px; 
@@ -75,17 +77,25 @@ cursor: pointer;"></i>
     <script src="js/main.js"></script>
  
  <!--JavaScript -->
-  <script>
- const togglePassword = document.querySelector('#togglePassword');
-  const password = document.querySelector('#confpass');
+   <script>
+  const togglePassword = document.querySelectorAll('.fa-eye');
 
-  togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash');
-});
+  togglePassword.forEach((icon) => {
+    icon.addEventListener('click', function (e) {
+      // find the associated password input field
+      const passwordField = this.previousElementSibling;
+      
+      // toggle the type attribute
+      const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordField.setAttribute('type', type);
+      
+      // toggle the eye icon
+      this.classList.toggle('fa-eye');
+      this.classList.toggle('fa-eye-slash');
+    });
+  });
+
+ 
   </script>
  </div>
  </div>
@@ -98,7 +108,7 @@ cursor: pointer;"></i>
     
     var status =document.getElementById("status").value;
    if(status == "resetFailed"){
- 		swal("Password Didn't Match", "Try Again");
+ 		swal("Password Didn't Match", "Try Again", "error");
  	}
 
     </script>
@@ -116,11 +126,10 @@ cursor: pointer;"></i>
 
 <div class="row">
 <ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
-<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
-<li><a href="faqs.jsp">FAQS</a></li>
-</ul>
+					<li><a href="termsofservice.jsp">TERMS AND CONDITION</a></li>
+					<li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
+					<li><a href="faqs.jsp">FAQS</a></li>
+				</ul>
 </div>
 
 <div class="row">

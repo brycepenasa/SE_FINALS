@@ -1,10 +1,12 @@
 @charset "UTF-8";
 
-
+body{
+	font-family: calibri !important;
+}
 .contain{
 	position:relative;
-	padding:100px;
-	background-color:#91DAFF;
+	padding:200px;
+	
 }
 
 .login-body{

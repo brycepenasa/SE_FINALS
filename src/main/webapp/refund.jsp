@@ -83,9 +83,8 @@ href="images/logo.jpg">
 
 <div class="row">
 <ul>
-<li><a href="termsofservice.jsp">TERMS OF SERVICE</a></li>
+<li><a href="termsofservice.jsp">TERMS AND CONDITION</a></li>
 <li><a href="privacypolicy.jsp">PRIVACY POLICY</a></li>
-<li><a href="refund.jsp">REFUND POLICY</a></li>
 <li><a href="faqs.jsp">FAQS</a></li>
 </ul>
 </div>
