@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>SE_FINALS</groupId>
   <artifactId>SE_FINALS</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>3.1.3.RELEASE</version>
   <packaging>war</packaging>
  <build>
     <plugins>
@@ -10,7 +10,9 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <release>18</release>
+          <source>1.8</source>
+          <target>1.8</target>
+          <verbose>true</verbose>
         </configuration>
       </plugin>
       <plugin>
