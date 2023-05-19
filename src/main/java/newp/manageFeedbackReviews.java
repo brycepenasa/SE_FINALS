@@ -21,9 +21,9 @@ public class manageFeedbackReviews extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "jdbc:mysql://localhost:3306/sefinals";
-        String user = "root";
-        String password = "admin";
+        String url = "jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals";
+        String user = "admindreamy";
+        String password = "@Soundsdreamy10";
         String productid = request.getParameter("id");
         String query = "SELECT uname, rating, review, productid, admin_reply, created_at FROM mytable WHERE productid = ?";
         List<Map<String, Object>> rows = new ArrayList<>();
