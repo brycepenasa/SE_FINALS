@@ -10,7 +10,7 @@ public class ForDatabase {
 		boolean status = false;
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		try (Connection connection = DriverManager									
-				.getConnection("jdbc:mysql://localhost:3306/sefinals?useSSL=false", "root", "admin");
+				.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals?useSSL=true", "admindreamy", "@Soundsdreamy10");
 																	
 				PreparedStatement ps = connection
 						.prepareStatement("SELECT * FROM users WHERE uname = ? and secQ = ? and secA = ? ")) {
