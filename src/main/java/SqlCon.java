@@ -8,7 +8,7 @@ public class SqlCon {
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/","admindreamy","@Soundsdreamy10");
+			Connection con=DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals","admindreamy","@Soundsdreamy10");
 			return con;
 		}
 		catch(Exception e)
