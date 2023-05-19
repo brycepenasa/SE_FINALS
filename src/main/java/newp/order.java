@@ -34,7 +34,7 @@ public class order extends HttpServlet {
 		try {
 			// Get database connection
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sefinals?useSSL=false", "root", "admin");
+			con = DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals", "admindreamy", "@Soundsdreamy10");
 			HttpSession session = request.getSession();
 			String uname = (String) session.getAttribute("uname");
 			
