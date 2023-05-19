@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - Soundsdreamy
+name: Build and deploy WAR app to Azure Web App - soundsdreamy
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -31,7 +31,7 @@ jobs:
           path: '${{ github.workspace }}/target/*.war'
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
@@ -47,7 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'Soundsdreamy'
+          app-name: 'soundsdreamy'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ABA1715FFC3246BB83CCB37DB30C0817 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_88E90EEB94474781A367D311A1D79245 }}
           package: '*.war'
