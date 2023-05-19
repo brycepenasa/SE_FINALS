@@ -35,7 +35,7 @@ public class feedbackReply extends HttpServlet {
 	   
 	    try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sefinals?useSSL=false", "root", "admin");
+			con = DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/", "admindreamy", "@Soundsdreamy10");
 			PreparedStatement pst = con.prepareStatement("update feedbacks set admin_reply = ? where uname = ? and productid = ?");
 			pst.setString(1, reply);
 			pst.setString(2, uname);
