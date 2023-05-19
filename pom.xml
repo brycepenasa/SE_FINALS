@@ -40,7 +40,7 @@
             </executions>
         </plugin>
     </plugins>
-  </build>
+  
   <dependencies>
     <dependency>
   <groupId>org.apache.tomcat.embed</groupId>
@@ -65,4 +65,5 @@
     <version>8.0.28</version>
 </dependency>
      </dependencies>
+   </build>
 </project>
