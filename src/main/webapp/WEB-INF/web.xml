@@ -20,11 +20,11 @@
     <url-pattern>/SqlCon</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>newp.Login</servlet-class>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>Login</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
+    <servlet-name>Login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
