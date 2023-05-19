@@ -38,7 +38,7 @@ public class regis extends HttpServlet {
 	    ResultSet rs = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals", "admindreamy", "@Soundsdreamy10");
+			con = DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals?useSSL=true", "admindreamy", "@Soundsdreamy10");
 			pstmt = con.prepareStatement(query);
 	         pstmt.setString(1, uname);
 	         pstmt.setString(2, email);
