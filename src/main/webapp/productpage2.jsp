@@ -14,9 +14,9 @@
 <%
 String id = request.getParameter("userId");
 String driverName = "com.mysql.cj.jdbc.Driver";
-String connectionUrl = "jdbc:mysql://localhost:3306/sefinals?allowPublicKeyRetrieval=true";
-String userId = "root";
-String password = "admin";
+String connectionUrl = "jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals?allowPublicKeyRetrieval=true"; 
+String userId = "admindreamy";
+String password = "@Soundsdreamy10";
 int stock = 0;
 try {
 	Class.forName(driverName);
