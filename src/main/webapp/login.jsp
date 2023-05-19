@@ -54,7 +54,7 @@ href="images/logo.jpg">
  <i class="fa-solid fa-user fa-3x"></i>
  <h1> Sign-In</h1>
  
- <form method="post" action="<%=request.getContextPath()%>/Login.java">
+ <form method="post" action="<%=request.getContextPath()%>/login">
  <input type="text" class="input-box" placeholder="Username" id="uname" name="uname" PATTERN="^[a-z0-9A-Z_-]{0,10}$" required title="Input Alphanumeric characters only | Input a maximum of 10 characters or numbers only">
   <input type="password" class="input-box" placeholder="Password" id="pass" name="pass" required
   title="Enter atleast 8 characters | Include atleast one (1) upper case letter | Include atleast one (1) number | Include atleast one (1) special character" 
