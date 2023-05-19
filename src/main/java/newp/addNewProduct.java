@@ -40,8 +40,8 @@ public class addNewProduct extends HttpServlet {
         try {
         	 String status = "";
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sefinals?useSSL=false", "root",
-                    "admin");
+            connection = DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals?useSSL=true", "admindreamy",
+                    "@Soundsdreamy10");
             // obtains the upload file part in this multipart request
             Part filePart = request.getPart("image");
             if (filePart != null) {
