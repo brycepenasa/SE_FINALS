@@ -83,9 +83,9 @@ function printPage() {
 Class.forName("com.mysql.cj.jdbc.Driver");
 
 // Connect to the database
-String url = "jdbc:mysql://localhost:3306/sefinals";
-String username = "root";
-String password = "admin";
+String url = "jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals";
+String username = "admindreamy";
+String password = "@Soundsdreamy10";
 Connection conn = DriverManager.getConnection(url, username, password);
 
 // Query the productorders table and calculate the total quantity for each product
