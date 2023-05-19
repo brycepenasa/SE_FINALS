@@ -9,10 +9,10 @@
 <%
 String id = request.getParameter("userId");
 String driverName = "com.mysql.cj.jdbc.Driver";
-String connectionUrl = "jdbc:mysql://localhost:3306/";
+String connectionUrl = "jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/";
 String dbName = "sefinals";
-String userId = "root";
-String password = "admin";
+String userId = "admindreamy";
+String password = "@Soundsdreamy10";
 
 try {
 	Class.forName(driverName);
