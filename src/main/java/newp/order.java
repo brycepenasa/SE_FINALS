@@ -2,7 +2,6 @@ package newp;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
-import javax.servlet.annotation.WebServlet;
 import java.sql.*;
 import java.io.IOException;
 
