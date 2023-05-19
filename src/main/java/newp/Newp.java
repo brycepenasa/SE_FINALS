@@ -29,7 +29,7 @@ public class Newp extends HttpServlet {
 		if (pass != null && confpass != null && pass.equals(confpass)) {
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sefinals?useSSL=false", "root", "admin");
+				Connection con = DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals?useSSL=true", "admindreamy", "@Soundsdreamy10");
 				PreparedStatement pst = con.prepareStatement("update users set pass = ? where uname = ? ");
 				pst.setString(1, pass);
 				pst.setString(2, (String) session.getAttribute("uname"));
