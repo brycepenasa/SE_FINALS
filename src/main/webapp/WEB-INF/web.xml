@@ -21,6 +21,26 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>regis</display-name>
+    <servlet-name>regis</servlet-name>
+    <servlet-class>regis</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>regis</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>Logout</display-name>
     <servlet-name>Logout</servlet-name>
     <servlet-class>Logout</servlet-class>
