@@ -218,7 +218,7 @@ try {
     
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sefinals?useSSL=false", "root", "admin");
+        conn = DriverManager.getConnection("jdbc:mysql://soundsdreamy.mysql.database.azure.com:3306/sefinals?useSSL=false", "admindreamy", "@Soundsdreamy");
         String query = "SELECT * FROM feedbacks WHERE productid = ?";
         pstmt = conn.prepareStatement(query);
         pstmt.setInt(1, productId);
